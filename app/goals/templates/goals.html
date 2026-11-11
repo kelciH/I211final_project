@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+
+{% block css %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('goals.static', filename='goals.css') }}">
+{% endblock %}
+
+
+{% block pageTitle %}My Goals {% endblock %}
+
+{% block content %}
+    <div class="goalsContent">
+    <div class="goalCard">
+    <div class="goalName">Saving for Jamacia</div>
+    <div class="goalAmount">500$</div>
+
+    </div>
+    </div>
+{% endblock %}

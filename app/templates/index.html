@@ -1,11 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Personal Finance Tracker</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-</head>
-<body>
-<div class="title-header">Personal Finance Tracker</div>
-</body>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+      {% block css %} {% endblock %}
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="navigation">
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('goals.goals') }}">Goals</a>
+        <a href="#">Transactions</a>
+      </div>
+      <div class="title-header">{% block pageTitle %}Personal Finance Tracker {% endblock %}</div>
+
+      {% block content %} {% endblock %}
+    </div>
+  </body>
 </html>

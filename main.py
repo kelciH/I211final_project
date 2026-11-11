@@ -1,11 +1,18 @@
-from flask import Flask, render_template
+# from flask import Flask, render_template
+#
+# app = Flask(__name__, template_folder='app/templates', static_folder='app/static')
+#
+#
+# @app.route('/')
+# def hello_world():
+#     return render_template('index.html')
+#
+# if __name__ == '__main__':
+#     app.run(debug=True)
 
-app = Flask(__name__, template_folder='app/templates', static_folder='app/static')
+from app import create_app
 
-
-@app.route('/')
-def hello_world():
-    return render_template('index.html')
+app = create_app()
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
