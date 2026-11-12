@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+
+{% block css %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('categories.static', filename='categories.css') }}">
+{% endblock %}
+
+
+{% block pageTitle %}My Categories {% endblock %}
+
+{% block content %}
+    <div class="goalsContent">
+    {% for category in categories %}
+
+        <div class="categoryCard">
+        <div class="categoryTitle"> {{ category.category }}</div>
+        </div>
+        {% else %}
+            <p>You don't have any categories yet!</p>
+    {% endfor %}
+
+    </div>
+{% endblock %}

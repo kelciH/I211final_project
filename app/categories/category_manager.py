@@ -4,7 +4,7 @@
 # Description: Retrieve categories from the database.
 from sqlalchemy.exc import SQLAlchemyError
 from .category import Category
-from .category_exceptions import CategoryExceptions
+from .category_exceptions import CategoryException
 
 
 class CategoryManager:
