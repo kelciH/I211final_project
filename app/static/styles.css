@@ -34,3 +34,22 @@ a {
 .goalsHeader {
     font-size: 30px;
 }
+
+.links {
+  min-height: 200px;
+  width: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.linkBox {
+  width: 200px;
+  height: 100px;
+  border: solid 3px saddlebrown;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 40px;
+}

@@ -1,19 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Places | Personal Finance Tracker</title>
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='styles.css') }}">
-</head>
-<body>
-    <nav>
-        <a href="{{ url_for('hello_world') }}">Home</a>
-        <a href="{{ url_for('place.index') }}">Places</a>
-    </nav>
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1">#}
+{#    <title>Places | Personal Finance Tracker</title>#}
+{#    <link rel="stylesheet"#}
+{#          href="{{ url_for('static', filename='styles.css') }}">#}
+{#</head>#}
+{#<body>#}
+{#    <nav>#}
+{#        <a href="{{ url_for('index') }}">Home</a>#}
+{#        <a href="{{ url_for('place.index') }}">Places</a>#}
+{#    </nav>#}
 
-    <h1>Places</h1>
+{% extends 'index.html' %}
+
+{% block css %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('goals.static', filename='goals.css') }}">
+{% endblock %}
+
+
+{% block pageTitle %}My Places{% endblock %}
+
+{% block content %}
+
+{#    <h1>Places</h1>#}
     <p>View the stores, employers, and other places in your tracker.</p>
 
     <table>
@@ -38,5 +50,6 @@
             {% endfor %}
         </tbody>
     </table>
-</body>
-</html>
+{#</body>#}
+{#</html>#}
+{% endblock %}

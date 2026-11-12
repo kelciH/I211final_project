@@ -1,6 +1,7 @@
 .goalsContent {
-    margin: 30px;
+    margin-bottom: 30px;
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
@@ -10,13 +11,14 @@
 .goalCard {
     width: 800px;
     height: 90px;
-    background-color: darksalmon;
+    border: solid 3px saddlebrown;
 
     padding: 10px;
     margin: 30px;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
+    align-items: center;
 }
 
 .goalName {

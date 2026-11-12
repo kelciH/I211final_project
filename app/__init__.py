@@ -21,6 +21,12 @@ def create_app():
     from .goals import bp as goals_bp
     app.register_blueprint(goals_bp)
 
+    from .place import bp as placebp
+    app.register_blueprint(placebp)
+
+    from .categories import bp as categories_bp
+    app.register_blueprint(categories_bp)
+
     # # Application error handling
     # @app.errorhandler(401)
     # def unauthorized_error(error):

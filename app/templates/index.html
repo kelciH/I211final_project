@@ -15,12 +15,26 @@
         <a href="{{ url_for('index') }}">Home</a>
         <a href="{{ url_for('goals.goals') }}">Goals</a>
         <a href="{{ url_for('place.index') }}">Place</a>
-        <a href="{{ url_for('cate') }}">Categories</a>
+        <a href="{{ url_for('categories.categories') }}">Categories</a>
 
       </div>
       <div class="title-header">{% block pageTitle %}Personal Finance Tracker {% endblock %}</div>
 
-      {% block content %} {% endblock %}
+      {% block content %}
+          <h1>Welcome to your finance tracker!</h1>
+          <div class="links">
+
+        <a href="{{ url_for('goals.goals') }}"><div class="linkBox">Goals</div></a>
+
+
+        <a href="{{ url_for('place.index') }}"><div class="linkBox">Place</div></a>
+
+
+        <a href="{{ url_for('categories.categories') }}"><div class="linkBox">Categories</div></a>
+
+
+          </div>
+      {% endblock %}
     </div>
   </body>
 </html>
