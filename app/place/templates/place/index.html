@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Places | Personal Finance Tracker</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('hello_world') }}">Home</a>
+        <a href="{{ url_for('place.index') }}">Places</a>
+    </nav>
+
+    <h1>Places</h1>
+    <p>View the stores, employers, and other places in your tracker.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Place</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for place in places %}
+                <tr>
+                    <td>{{ place.place_id }}</td>
+                    <td>{{ place.place or "" }}</td>
+                    <td>{{ place.description or "" }}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">No places have been added yet.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
