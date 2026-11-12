@@ -21,18 +21,18 @@ def create_app():
     from .goals import bp as goals_bp
     app.register_blueprint(goals_bp)
 
-    # Application error handling
-    @app.errorhandler(401)
-    def unauthorized_error(error):
-        return render_template('errors/401.html', error=error), 401
-
-    @app.errorhandler(404)
-    def page_not_found(error):
-        return render_template('errors/404.html', error=error), 404
-
-    @app.errorhandler(409)
-    def conflict_error(error):
-        return render_template('errors/409.html', error=error), 409
+    # # Application error handling
+    # @app.errorhandler(401)
+    # def unauthorized_error(error):
+    #     return render_template('errors/401.html', error=error), 401
+    #
+    # @app.errorhandler(404)
+    # def page_not_found(error):
+    #     return render_template('errors/404.html', error=error), 404
+    #
+    # @app.errorhandler(409)
+    # def conflict_error(error):
+    #     return render_template('errors/409.html', error=error), 409
 
     @app.route('/')
     def index():

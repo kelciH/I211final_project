@@ -10,10 +10,21 @@
 
 {% block content %}
     <div class="goalsContent">
-    <div class="goalCard">
-    <div class="goalName">Saving for Jamacia</div>
-    <div class="goalAmount">500$</div>
+    {% for goal in goals %}
 
-    </div>
+        <div class="goalCard">
+        <div class="goalName">{{ goal.goal_type }}</div>
+        <div class="goalDetails">
+            <p>Amount: ${{ goal.goal_amount }}</p>
+            <p>Timeframe: {{ goal.goal_timeframe }}</p>
+
+        </div>
+
+
+        </div>
+        {% else %}
+            <p>You don't have any goals yet!</p>
+    {% endfor %}
+
     </div>
 {% endblock %}
