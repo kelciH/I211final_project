@@ -1,15 +1,14 @@
-# Author: Kelci Kempson
-# Date: 11/11/26
+# Author: Jacianna Dockery
+# Date: 11/11/2026
 # File: database.py
-# Description: database
+# Description: the connection to the tracker database.
 
 import os
 
+
 def init_db(app):
     basedir = os.path.abspath(os.path.dirname(__file__))
-    connection_string = ('sqlite:///' + os.path.join(basedir, 'tracker.db'))
+    database_path = os.path.join(basedir, "tracker.db")
 
-    app.config['SQLALCHEMY_DATABASE_URI'] = connection_string
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-
+    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + database_path
+    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
