@@ -14,11 +14,12 @@ Jacianna:
 - coordinated to get project to finish
 
 **Instructions for Installing Dependencies:**
-possibly install SQLAlchemy
+- Install SQLAlchemy using the button provided by PyCharm or 'pip install sqlalchemy'
 
 **Features Implemented and How to Test Them (Include URLs):**
-run the main.py file and open the link on your local 5000 port
+- Run the main.py file and open the link on your local 5000 port
 
 **Notes for Instructor and TA:**
-may have to make sure the database is linked before running project, everything else should work perfectly in pycharm
+- Open a Flask application
+- Make sure the database is linked before running project
 
