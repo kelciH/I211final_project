@@ -15,7 +15,7 @@ class PlaceController:
         places = PlaceManager.get_places()
 
         try:
-            return render_template("place/index.html", places=places)
+            return render_template("places/index.html", places=places)
 
         except TemplateError:
             abort(500)
