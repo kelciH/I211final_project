@@ -1,0 +1,43 @@
+{% extends 'index.html' %}
+
+{% block css %}
+    {{ super() }}
+    <link rel="stylesheet"
+          href="{{ url_for('place.static', filename='places.css') }}">
+{% endblock %}
+
+{% block pageTitle %}My Places{% endblock %}
+
+{% block content %}
+    <div class="placesContent">
+        <p class="placesIntro">
+            View the stores, employers, and other places in your tracker.
+        </p>
+
+        <table class="placesTable">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Place</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for place in places %}
+                    <tr>
+                        <td>{{ place.place_id }}</td>
+                        <td class="placeName">{{ place.place or "" }}</td>
+                        <td>{{ place.description or "" }}</td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="3" class="placesEmpty">
+                            No places have been added yet.
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
