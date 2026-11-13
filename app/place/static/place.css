@@ -1,0 +1,47 @@
+.placesContent {
+    width: 90%;
+    max-width: 900px;
+    margin-bottom: 40px;
+}
+
+.placesIntro {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 18px;
+}
+
+.placesTable {
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid saddlebrown;
+    background-color: #fffaf3;
+}
+
+.placesTable th,
+.placesTable td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #d9b99b;
+}
+
+.placesTable th {
+    background-color: saddlebrown;
+    color: white;
+    font-size: 18px;
+}
+
+.placesTable tbody tr:nth-child(even) {
+    background-color: antiquewhite;
+}
+
+.placesTable tbody tr:hover {
+    background-color: #f0dcc4;
+}
+
+.placeName {
+    font-weight: bold;
+}
+
+.placesEmpty {
+    text-align: center;
+}
