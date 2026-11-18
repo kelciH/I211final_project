@@ -4,7 +4,7 @@
 # Description: Define the Category model for the finance tracker.
 
 from sqlalchemy import ForeignKey
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 from extensions import db
 
 
@@ -21,6 +21,9 @@ class Category(db.Model):
     def __init__(self, category: str = "", place_id: int = None):
         self.category = category
         self.place_id = place_id
+
+    # access the place associated with this category
+    place: Mapped["Place"] = relationship("Place", back_populates="categories")
 
     def __repr__(self):
         return f"<Category {self.category}>"
