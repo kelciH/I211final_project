@@ -4,7 +4,7 @@
 # Description: define the Place model for the finance tracker.
 
 
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 from extensions import db
 
 
@@ -15,12 +15,13 @@ class Place(db.Model):
     place: Mapped[str] = mapped_column(nullable=True)
     description: Mapped[str] = mapped_column(nullable=True)
 
+    # access the categories associated with this place
+    categories: Mapped[list["Category"]] = relationship("Category", back_populates="place")
+
     def __init__(self, place: str = "", description: str = ""):
         self.place = place
         self.description = description
-        
-     # access the categories associated with this place
-    categories: Mapped[list["Category"]] = relationship("Category", back_populates="place")
+
 
     def __repr__(self):
         return f"<Place {self.place}>"
