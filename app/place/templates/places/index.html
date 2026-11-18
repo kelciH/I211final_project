@@ -14,6 +14,23 @@
             View the stores, employers, and other places in your tracker.
         </p>
 
+        <!-- Submit search words through the URL. -->
+        <form method="get" action="{{ url_for('place.index') }}">
+            <label for="search">Search places:</label>
+            <input
+                type="search"
+                id="search"
+                name="search"
+                value="{{ search }}"
+                placeholder="Example: coffee grocery"
+            >
+            <button type="submit">Search</button>
+            <a href="{{ url_for('place.index') }}">Show all</a>
+        </form>
+
+        <p>Enter one or more words to search names and descriptions.
+            Results can match any word.</p>
+
         <table class="placesTable">
             <thead>
                 <tr>
@@ -33,7 +50,11 @@
                 {% else %}
                     <tr>
                         <td colspan="3" class="placesEmpty">
-                            No places have been added yet.
+                            {% if search %}
+                                No places matched your search.
+                            {% else %}
+                                No places have been added yet.
+                            {% endif %}
                         </td>
                     </tr>
                 {% endfor %}
