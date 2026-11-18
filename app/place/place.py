@@ -18,6 +18,9 @@ class Place(db.Model):
     def __init__(self, place: str = "", description: str = ""):
         self.place = place
         self.description = description
+        
+     # access the categories associated with this place
+    categories: Mapped[list["Category"]] = relationship("Category", back_populates="place")
 
     def __repr__(self):
         return f"<Place {self.place}>"
