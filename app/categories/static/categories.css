@@ -22,3 +22,20 @@
     font-size: 20px;
     font-weight: bold;
 }
+
+/* Stack the category title and related place neatly. */
+.categoryCard {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.categoryCard p {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.5;
+}
