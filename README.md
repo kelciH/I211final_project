@@ -8,10 +8,14 @@ Kelci:
 - compiled everything and submitted project
 - coordinated to get project to finish
 
+
 Jacianna:
-- created place and background of categories
+- Added a Places search form that searches place names and descriptions.
+- Added the Categories–Places ORM relationship and displayed the place names on the Categories page.
+- fixed categories and organized it into separate blueprint, route, controller, and manager files.
 - wrote out the description document
 - coordinated to get project to finish
+
 
 **Instructions for Installing Dependencies:**
 - Install SQLAlchemy using the button provided by PyCharm or 'pip install sqlalchemy'
