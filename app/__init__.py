@@ -2,8 +2,6 @@
 # Date: 11/11/26
 # File: __init__.py
 # Description: initializing the flask application
-from flask import Flask, render_template
-from datetime import datetime
 from extensions import db
 from database import init_db
 
@@ -27,21 +25,21 @@ def create_app():
     from .categories import bp as categories_bp
     app.register_blueprint(categories_bp)
 
-    # # Application error handling
-    # @app.errorhandler(401)
-    # def unauthorized_error(error):
-    #     return render_template('errors/401.html', error=error), 401
-    #
-    # @app.errorhandler(404)
-    # def page_not_found(error):
-    #     return render_template('errors/404.html', error=error), 404
-    #
-    # @app.errorhandler(409)
-    # def conflict_error(error):
-    #     return render_template('errors/409.html', error=error), 409
+    # Handle database and page errors.
+    from .place.place_exceptions import PlaceException
+    from .goals.goals_exceptions import GoalException
+    from .categories.category_exceptions import CategoryException
 
-    @app.route('/')
-    def index():
-        return render_template('index.html', year=datetime.now().year)
+    @app.errorhandler(PlaceException)
+    @app.errorhandler(GoalException)
+    @app.errorhandler(CategoryException)
+    @app.errorhandler(500)
+    def handle_application_error(error):
+        app.logger.error("Page loading failed: %s", error)
+        return "We couldn't load this page. Please try again later.", 500
+
+    # Register the homepage route from its separate file.
+    from .routes import register_routes
+    register_routes(app)
 
     return app
