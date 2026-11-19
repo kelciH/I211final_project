@@ -11,6 +11,7 @@ from .goals import (Goals)
 from .goals_exceptions import GoalNotFoundException
 
 class GoalsManager:
+    #function for getting all goals
     @staticmethod
     def get_goals() -> list:
         try:
@@ -21,6 +22,7 @@ class GoalsManager:
         except Exception as e:
             raise GoalNotFoundException(e)
 
+#function for getting and filtering the amount of goals
     @staticmethod
     def get_goals_by_amount(min_amount=None, max_amount=None) -> list:
         try:

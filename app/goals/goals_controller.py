@@ -8,7 +8,7 @@ from .goals_manager import GoalsManager
 
 
 class GoalsController:
-
+#getting all information to index
     @staticmethod
     def index():
 

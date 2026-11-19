@@ -13,7 +13,7 @@ bp = Blueprint('goals', __name__, url_prefix='/goals',
 
 @bp.route('/')
 def goals():
-
+#information from the form
     min_amount = request.args.get('min_amount', type=float)
     max_amount = request.args.get('max_amount', type=float)
 
