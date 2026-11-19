@@ -3,4 +3,24 @@
 # File: goals_controller.py
 # Description: controller goals
 
-#no need yet
+from flask import render_template, request
+from .goals_manager import GoalsManager
+
+
+class GoalsController:
+
+    @staticmethod
+    def index():
+
+        min_amount = request.args.get('min_amount', type=float)
+        max_amount = request.args.get('max_amount', type=float)
+
+        if min_amount is not None or max_amount is not None:
+            result = GoalsManager.get_goals_by_amount(
+                min_amount=min_amount,
+                max_amount=max_amount
+            )
+        else:
+            result = GoalsManager.get_goals()
+
+        return render_template('goals.html', goals=result)

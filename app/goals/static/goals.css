@@ -38,3 +38,33 @@
 
     border: solid 3px antiquewhite;
 }
+
+.goalsFilter {
+    width: 800px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.filterBtns {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 20px;
+}
+
+.filterBtn {
+    height: 20px;
+    width: 100px;
+    background-color: antiquewhite;
+    border: solid 3px saddlebrown;
+    text-align: center;
+}
+
+.filterLabel {
+    height: 20px;
+    width: 150px;
+    background-color: antiquewhite;
+
+}

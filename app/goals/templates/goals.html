@@ -9,7 +9,45 @@
 {% block pageTitle %}My Goals {% endblock %}
 
 {% block content %}
+   {#filtering goals#}
+    <div class="goalsFilter">
+
+            <form action="{{ url_for('goals.goals') }}" method="GET">
+
+                <label class="filterLabel"  for="min_amount">Minimum Amount:</label>
+                <input
+                    type="number"
+                    id="min_amount"
+                    name="min_amount"
+                    step="0.01"
+                    min="0"
+                    placeholder="Minimum amount"
+                    value="{{ request.args.get('min_amount', '') }}"
+                >
+
+                <label class="filterLabel" for="max_amount">Maximum Amount:</label>
+                <input
+                    type="number"
+                    id="max_amount"
+                    name="max_amount"
+                    step="0.01"
+                    min="0"
+                    placeholder="Maximum amount"
+                    value="{{ request.args.get('max_amount', '') }}"
+                >
+
+                <div class="filterBtns">
+                    <button class="filterBtn" type="submit">Filter Goals</button>
+
+                    <a href="{{ url_for('goals.goals') }}" class="filterBtn">Clear Filters</a>
+                </div>
+
+            </form>
+
+    </div>
     <div class="goalsContent">
+
+{# displaying goals   #}
     {% for goal in goals %}
 
         <div class="goalCard">
