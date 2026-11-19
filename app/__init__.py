@@ -4,6 +4,7 @@
 # Description: initializing the flask application
 from extensions import db
 from database import init_db
+from flask import Flask
 
 
 def create_app():
