@@ -1,13 +1,10 @@
 # Personal Finance Tracker
 ### This is the final project for I211.
 
-**Team Member Contributions for Phase 2:**
+**Team Member Contributions for Phase 3:**
 Kelci:
-- created base structure and GitHub
-- created home, goals, and html for categories
-- compiled everything and submitted project
-- coordinated to get project to finish
-
+- added the filtering feature on goals page
+- worked with team to finish project
 
 Jacianna:
 - Added a Places search form that searches place names and descriptions.
@@ -16,6 +13,9 @@ Jacianna:
 - wrote out the description document
 - coordinated to get project to finish
 
+Fernando:
+- Added the sorting feature to goals page
+- Worked with team to finish project
 
 **Instructions for Installing Dependencies:**
 - Install SQLAlchemy using the button provided by PyCharm or 'pip install sqlalchemy'
